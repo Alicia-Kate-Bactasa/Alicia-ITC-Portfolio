@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquarium Portfolio</title>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #010c21, #013a63);
+            color: #f0f8ff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(1, 42, 74, 0.986);
+            border-bottom: 2px solid #0c8bb5;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            color: #00b4d8;
+            text-shadow: 2px 2px 10px #023e8a;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #f5f1df;
+        }
+
+        /* Profile Section */
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            background: rgba(2, 48, 84, 0.7);
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .profile-picture {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-picture img {
+            width: 285px;
+            height: 270px;
+            border-radius: 50%;
+            border: 5px solid #179bb6;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-info {
+            flex: 2;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .profile-info h2 {
+            font-size: 32px;
+            color: #90e0ef;
+        }
+
+        .profile-info p {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 52, 94, 0.8);
+            color: #f0f8ff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+        }
+
+        h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #90e0ef;
+        }
+
+        /* Buttons */
+        .action-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 16px;
+            background: #0077b6;
+            color: #f0f8ff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background 0.3s, transform 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .action-button:hover {
+            background: #00b4d8;
+            transform: scale(1.1);
+        }
+
+        /* Floating Bubbles */
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(1) { left: 20%; animation-duration: 8s; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 40%; width: 30px; height: 30px; animation-duration: 10s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 60%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: 4s; }
+        .bubble:nth-child(4) { left: 80%; animation-duration: 9s; animation-delay: 6s; }
+        .bubble:nth-child(5) { left: 10%; animation-duration: 11s; animation-delay: 3s; }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-1200px); opacity: 0; }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-picture img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .profile-info {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .profile-info h2 {
+                font-size: 26px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                padding: 15px;
+                max-width: 95%;
+            }
+
+            .action-button {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Welcome to My ITC Portfolio</h1>
+        <p>Explore my world beneath the waves!</p>
+    </div>
+
+    <div class="profile">
+        <div class="profile-picture">
+            <img src="images/ish.jpg" alt="Profile Picture">
+        </div>
+        <div class="profile-info">
+            <h2>Hi, I’m <b>Alicia!</b></h2>
+            <p><i>But you can call me Ishie, like everyone else does!</i></p>
+            <p class="description">
+                My name is Alicia Kate Bactasa, a student at the University of San Carlos, where I am currently pursuing my studies with dedication and enthusiasm. Beyond my academics, I indulge in creative hobbies like painting and baking, which allow me to express myself and unwind.
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2>Journey into the Concepts</h2>
+            <p>Explore key IT concepts with interactive questions.</p>
+            <a href="surfaceConcepts.html" class="action-button">Start Journey</a>
+        </div>
+
+        <div class="section">
+            <h2>Dive Deeper into the Concepts</h2>
+            <p>Engaging essays to enhance understanding.</p>
+            <a href="deeperConcepts.html" class="action-button">Dive Deeper</a>
+        </div>
+
+        <div class="section">
+            <h2>Feedback</h2>
+            <p>Have ideas or comments? Let me know!</p>
+            <a href="feedback.html" class="action-button">Leave Feedback</a>
+        </div>
+    </div>
+
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+</body>
+</html>

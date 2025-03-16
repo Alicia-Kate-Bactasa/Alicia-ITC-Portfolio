@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+
+    <!-- style -->
+
+    <style>
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #011728, #024779);
+            color: #fffdf0;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(1, 42, 74, 0.986);
+            color: #eee8d9;
+            border-bottom: 2px solid #0c8bb5;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            line-height: 1.5;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 15px;
+            background: #00b4d8;
+            color: #f0f8ff;
+            padding: 8px 14px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background: #0077b6;
+            transform: scale(1.05);
+        }
+
+        .content {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        .form-section h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .form-section label {
+            font-size: 14px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .form-section input[type="text"],
+        .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-bottom: 15px;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .form-section input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            background: #0077b6;
+            color: #ede6d9;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #00b4d8;
+        }
+
+        .contact-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 20px;
+        }
+
+        .contact-section p {
+            font-size: 14px;
+        }
+
+        .bubbles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in-out;
+        }
+
+        .bubble:nth-child(1) { left: 20%; animation-duration: 8s; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 40%; width: 30px; height: 30px; animation-duration: 10s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 60%; width: 25px; height: 25px; animation-duration: 12s; animation-delay: 4s; }
+        .bubble:nth-child(4) { left: 80%; animation-duration: 9s; animation-delay: 6s; }
+        .bubble:nth-child(5) { left: 10%; animation-duration: 11s; animation-delay: 3s; }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-1200px); opacity: 0; }
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 15px;
+            background: #00b4d8;
+            color: #f0f8ff;
+            padding: 8px 14px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .back-button:hover {
+            background: #0077b6;
+            transform: scale(1.05);
+        }
+    </style>
+
+      <!--End of style -->
+
+      <!-- HTML -->
+
+</head>
+<body>
+    <div class="header">
+        <h1>Give Us Your Feedback!</h1>
+        <p>If you have any problems or insights regarding our website please do not hesitate to answer our short form. </p>
+        <p>Your feedback helps us improve and create a more enhanced website!</p>
+        <a href="index.html" class="back-button">Go Back to Main</a>
+    </div>
+
+    <div class="content">
+        
+        <form action="https://script.google.com/macros/s/AKfycbyPzUCenH3fqYvE_70-Pa4WmuA07DG0r6bOjj-XKJcspHuBbMtQv7w-Cqrr3BLemO7L/exec" method="POST">
+           
+            <!-- 
+
+        This is an HTML form element that sends data to a Google Apps Script endpoint when submitted.
+        
+        - The 'action' contains the URL of the Google Apps Script Web App that will process the form submission.
+        - The 'method' is set to 'POST', which means the form data will be sent to the server (Google Apps Script) via a POST request.
+        
+        The form will submit the data to the provided URL for handling or storing the input. 
+
+        The Google Apps Script runs when it receives a POST request from the form submission.
+        The script is triggered by the doPost function, which is automatically triggered when data is sent to the script URL.
+        The script receives the data from the form using the e.parameter object, which contains all the form values.
+
+    -->
+
+    <!--  This function handles the data when the form is submitted.
+
+    1. It opens a Google Spreadsheet by its ID.
+    2. It takes the data from the form submission (like rating, problems, suggestions, etc.).
+    3. It adds this data as a new row in the Google Sheet.
+    4. It sends a thank you message after the data is saved.
+
+    Example code:
+
+    function doPost(e) {
+        > Opens the spreadsheet and select the sheet
+        var sheet = SpreadsheetApp.openById('1Dt8ffqgY--3vap8pgckrE8JLZhXBMSqeucTtjf67PbE').getSheetByName('Sheet1');
+
+        > Gets form data
+        var rating = e.parameter.rating; // gets the 'rating' from the form submission
+        var problems = e.parameter.problems; // gets the 'problems' from the form submission
+        var suggestions = e.parameter.suggestions; // gets the 'suggestions' from the form submission
+        // Process and save data in the Google Sheet
+        var insights = e.parameter.insights;
+        var thoughts = e.parameter.thoughts;
+
+        >  Save the data to the sheet
+        sheet.appendRow([rating, problems, suggestions, insights, thoughts]);
+
+        > Shows a thank you message
+        return HtmlService.createHtmlOutput("Thank you for your feedback!");
+    }
+        -->
+
+            <div class="form-section">
+                <h2>1. What problems have you encountered?</h2>
+                <textarea name="problems" rows="4" placeholder="Describe any issues you faced..."></textarea>
+            </div>
+
+
+            <div class="form-section">
+                <h2>2. Any suggestions?</h2>
+                <textarea name="suggestions" rows="4" placeholder="Share your suggestions here..."></textarea>
+            </div>
+
+
+            <div class="form-section">
+                <h2>3. Any insights?</h2>
+                <textarea name="insights" rows="4" placeholder="What new things have you learned from this website?"></textarea>
+            </div>
+
+
+            <div class="form-section">
+                <h2>4. Any thoughts you would like to share with us?</h2>
+                <textarea name="thoughts" rows="4" placeholder="Your thoughts..."></textarea>
+            </div>
+
+
+            <button type="submit" class="submit-button">Submit Feedback</button>
+        </form>
+    </div>
+
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you need further assistance or have any questions, feel free to email at:</p>
+        <p>bactasa.ak@gmail.com</p>
+    </div>
+    
+      <!-- Bubbles  -->
+
+    <div class="bubbles">
+      
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+</body>
+</html>
